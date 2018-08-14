@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
+import {withTracker} from 'meteor/react-meteor-data'
 import Routes from "../../../routes";
+
 class App extends Component {
   render() {
-    <Router>
+    return(
+      <Router>
       <Routes />
-    </Router>;
+    </Router>
+    )
+
   }
 }
-
-export default withTracker(() => {})(App);
+export default App
+// export default withTracker(() => {})(App);

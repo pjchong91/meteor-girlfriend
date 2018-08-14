@@ -3,8 +3,15 @@ import { withTracker } from "meteor/react-meteor-data";
 
 class Hub extends Component {
   render() {
-    return <h1>hello</h1>;
+
+    return (
+      this.props.currentUser ? 
+      <h1>hello {this.props.currentUser.emails[0].address}</h1> : ''
+    );
   }
 }
-
-export default withTracker(() => {})(Hub);
+export default withTracker(() => {
+  return{
+      currentUser:Meteor.user()
+  }
+})(Hub);
